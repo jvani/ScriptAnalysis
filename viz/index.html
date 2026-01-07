@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Big Lebowski — Sentiment Visualizations</title>
+  <style>
+    body { font-family: Arial, Helvetica, sans-serif; margin:18px; background:#f7f7f7; color:#111 }
+    h1 { margin:0 0 12px 0 }
+    .viz { background:#fff; border-radius:6px; box-shadow:0 1px 6px rgba(0,0,0,0.08); padding:12px; margin:12px 0 }
+    #mean-viz { height:340px }
+    #line-viz { padding-top:6px }
+    .controls { margin-bottom:8px; display:flex; gap:8px; align-items:center; flex-wrap:wrap }
+    .controls label { font-weight:600 }
+    select { min-width:220px; height:36px }
+    .tooltip { position:absolute; pointer-events:none; background:rgba(0,0,0,0.8); color:#fff; padding:8px; border-radius:4px; font-size:13px; display:none; z-index:9999; box-shadow:0 4px 12px rgba(0,0,0,0.25) }
+    svg { font-family: inherit; }
+    .viz svg { font-size: 12px; }
+    .char-title { font-weight:700; margin:0 0 6px 0 }
+    @media (max-width:600px){ #mean-viz {height:260px} }
+  </style>
+</head>
+<body>
+  <h1>Big Lebowski — Sentiment Visualizations</h1>
+
+  <div id="mean-viz" class="viz">
+    <h2 style="margin:0 0 10px 0">Characters' Mean Sentiment</h2>
+    <div id="mean-chart"></div>
+  </div>
+
+  <div id="line-viz" class="viz">
+    <h2 style="margin:0 0 10px 0">Characters' Line-by-Line Sentiment</h2>
+    <!-- controls removed; using hardcoded character set -->
+    <div id="line-charts"></div>
+  </div>
+
+  <div class="tooltip" id="tooltip"></div>
+
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
